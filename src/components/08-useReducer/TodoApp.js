@@ -46,7 +46,7 @@ export const TodoApp = () => {
 
         dispatch( action );
 
-    }
+    };
 
     // handleSubmit para controlar el input
     const handleSubmit = (e) => {
@@ -84,27 +84,27 @@ export const TodoApp = () => {
 
                 <div className='col-7'>
 
-                <ul className='list-group-flush'>
-                    {
-                        todos.map( (todo, i) => (
+                    <ul className='list-group-flush'>
+                        {
+                            todos.map( (todo, i) => (
 
-                            <li 
-                                key={ todo.id }
-                                className='list-group-item'
-                            > 
-                                <p className='text-center'> { i +1 }. { todo.desc } </p>
-                                
-                                <button 
-                                    className='btn btn-danger'
-                                    onClick={ () => handleDelete( todo.id ) }
-                                >
-                                    Borrar
-                                </button>
-                            </li>
+                                <li 
+                                    key={ todo.id }
+                                    className='list-group-item'
+                                > 
+                                    <p className='text-center'> { i +1 }. { todo.desc } </p>
+                                    
+                                    <button 
+                                        className='btn btn-danger'
+                                        onClick={ () => handleDelete( todo.id ) }
+                                    >
+                                        Borrar
+                                    </button>
+                                </li>
 
-                        ))
-                    } 
-                </ul>
+                            ))
+                        } 
+                    </ul>
 
                 </div>
 
