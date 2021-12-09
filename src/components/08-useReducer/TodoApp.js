@@ -28,6 +28,17 @@ export const TodoApp = () => {
 
     }, [todos] );
 
+    const handleDelete = ( todoId ) => {
+
+        const action = {
+            type: 'delete',
+            payload: todoId
+        };
+
+        dispatch( action );
+
+    }
+
     // handleSubmit para controlar el input
     const handleSubmit = (e) => {
 
@@ -76,6 +87,7 @@ export const TodoApp = () => {
                                 
                                 <button 
                                     className='btn btn-danger'
+                                    onClick={ () => handleDelete( todo.id ) }
                                 >
                                     Borrar
                                 </button>
