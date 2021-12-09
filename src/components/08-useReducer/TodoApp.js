@@ -1,3 +1,7 @@
+/*********************************/
+/*            IMPORTS            */
+/*********************************/
+
 import React, { useEffect, useReducer } from 'react';
 
 import { todoReducer } from './todoReducer';
@@ -5,6 +9,11 @@ import { useForm } from '../../hooks/useForm';
 
 import './styles.css';
 
+/*********************************/
+/*          CODE START           */
+/*********************************/
+
+// Estado Inicial
 const init = () => {
 
     return JSON.parse(localStorage.getItem('todos')) || [];
@@ -136,3 +145,7 @@ export const TodoApp = () => {
     );
 
 };
+
+/*********************************/
+/*           CODE END            */
+/*********************************/
