@@ -25,7 +25,7 @@ export const TodoApp = () => {
     // useReducer Hook
     const [ todos, dispatch ] = useReducer( todoReducer, [], init );
 
-    // useForm Hook
+    // useForm Custom-Hook
     const [ { description }, handleInputChange, reset ] = useForm({
         description: ''
     });
@@ -37,6 +37,7 @@ export const TodoApp = () => {
 
     }, [todos] );
 
+    // handleDelete para eliminar tareas
     const handleDelete = ( todoId ) => {
 
         const action = {
@@ -45,6 +46,16 @@ export const TodoApp = () => {
         };
 
         dispatch( action );
+
+    };
+
+    // handleToggle para marcar tareas como completas
+    const handleToggle = ( todoId ) => {
+        
+        dispatch({
+            type: 'toggle',
+            payload: todoId
+        });
 
     };
 
@@ -92,7 +103,12 @@ export const TodoApp = () => {
                                     key={ todo.id }
                                     className='list-group-item'
                                 > 
-                                    <p className='text-center'> { i +1 }. { todo.desc } </p>
+                                    <p 
+                                        className={ `${ todo.done && 'complete' }` }
+                                        onClick={ () => handleToggle( todo.id ) }
+                                    > 
+                                        { i +1 }. { todo.desc } 
+                                    </p>
                                     
                                     <button 
                                         className='btn btn-danger'
