@@ -19,16 +19,21 @@ export const AppRouter = () => {
 
                 <NavBar />
 
-                <Switch>
+                <div className="container">
 
-                    <Route exact path="/" component={ HomeScreen } />
+                    <Switch>
 
-                    <Route exact path="/about" component={ AboutScreen } />
-                    <Route exact path="/login" component={ LoginScreen } />                    
+                        <Route exact path="/" component={ HomeScreen } />
 
-                    <Redirect to="/" />
+                        <Route exact path="/about" component={ AboutScreen } />
+                        <Route exact path="/login" component={ LoginScreen } />                    
 
-                </Switch>
+                        <Redirect to="/" />
+
+                    </Switch>
+
+                </div>
+
 
             </div>
         </Router>
