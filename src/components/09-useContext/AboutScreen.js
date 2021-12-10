@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const AboutScreen = () => {
     return (
@@ -6,5 +6,5 @@ export const AboutScreen = () => {
             <h1>AboutScreen</h1>
             <hr />
         </div>
-    )
-}
+    );
+};
