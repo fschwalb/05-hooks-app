@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { HooksApp } from '../HooksApp';
 
 
-describe('Pruebas en <HookApp />', () => { 
+describe('Pruebas en <HooksApp />', () => { 
 
     test('Debe mostrarse correctamente', () => { 
 
